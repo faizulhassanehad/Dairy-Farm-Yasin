@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+
+/* font-family: 'Courgette', cursive; */
+
+.home_banner_section{
+  background: rgba(0,0,0,0.5) url('./Images/bg.avif');
+  background-blend-mode: darken;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.banner_text_div{
+  padding-top: 40px;
+}
+.banner_text{
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Courgette', cursive;
+  color: rgb(217, 209, 209);
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.banner_title{
+  font-size: calc( 3em + 7vmin );
+  font-weight: 900;
+  color: rgb(255, 255, 255);
+  
+  --x-offset: -0.0825em;
+  --y-offset: 0.0825em;
+  --stroke: 0.025em;
+  --background-color: rgb(0, 0, 0);
+  --stroke-color: lightblue;
+  
+  text-shadow: 
+    
+    var(--x-offset)
+    var(--y-offset)
+    0px
+    var(--background-color), 
+    
+    calc( var(--x-offset) - var(--stroke) )
+    calc( var(--y-offset) + var(--stroke) )
+    0px
+    var(--stroke-color);
+  
+}
+
+@supports ( text-shadow: 1px 1px 1px 1px black ) {
+  .banner_title {
+    text-shadow:
+      
+      var(--x-offset)
+      var(--y-offset)
+      0px
+      0px
+      var(--background-color), 
+      
+      var(--x-offset) 
+      var(--y-offset)
+      var(--stroke)
+      0px
+      var(--stroke-color);
+    
+  }
+}
+
+.explore_btn {
+  background-color: #3DD1E7;
+  border: 0 solid #E5E7EB;
+  box-sizing: border-box;
+  color: #000000;
+  display: flex;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: .75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  width: 100%;
+  max-width: 460px;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.explore_btn:focus {
+  outline: 0;
+}
+
+.explore_btn:after {
+  content: '';
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.explore_btn:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+@media (min-width: 768px) {
+  .explore_btn {
+    padding: .75rem 3rem;
+    font-size: 1.25rem;
+  }
+}
+
+.table_container{
+  background: #91c9f9;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFFDE4, #7dc2ff);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFFDE4, #93cdff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ border-radius: 15px;
+ box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.table_section{
+  padding-bottom: 40px;
+
+}
+
+.total_div{
+  border: inset rgb(3, 3, 63) 3px;
+  margin-top: 30px;
+  text-align: center;
+  border-radius: 5px;
+}
+.table_text{
+  color: rgb(8, 85, 95);
+  font-size: 20px;
+}
+.table_title{
+  font-family: 'Courgette', cursive;
+  color: #100a49;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 30px;
+  font-weight: 600;
+}
