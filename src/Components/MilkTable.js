@@ -16,6 +16,7 @@ const MilkTable = () => {
       {id: 'c6', name: 'Ayrshire cattle'},
       {id: 'c7', name: 'Australian Brangus'},
       {id: 'c8', name: 'Murray Grey cattle'},
+      
     ]
   
     const CheckHandler = (item) => {
@@ -30,7 +31,16 @@ const MilkTable = () => {
           setCheckArr([...checkArr, item])
       }
   }
-
+  const handleEnter = (event) => {
+      console.log(event)
+    console.log("hello");
+      if (event.key.toLowerCase() === "onKeyDown") {
+      const form = event.target.form;
+      const index = [...form].indexOf(event.target);
+      form.elements[index + 1].focus();
+      event.preventDefault();
+    }
+  };
   return (
     <section className='table_section'>
         <div className='container mx-auto table_container'>
@@ -62,9 +72,9 @@ const MilkTable = () => {
                     <tbody>
                     {
                         cowArr.map(cow =>  <tr>
-                        <td><input onClick={() => CheckHandler(cow.id)} type="checkbox" /></td>
+                        <td><input onClick={() => CheckHandler(cow.id)} type="checkbox" defaultChecked={true}/></td>
                         <td>{cow.name}</td>
-                        <td><input disabled={checkArr?.some(item => item === cow.id) ? false  : true } onBlur={(e) => setTotalMilk(totalMilk + Number(e.target.value))} type="text" placeholder='enter milk amount' /></td>
+                        <td><input onKeyDown={handleEnter} disabled={checkArr?.some(item => item === cow.id) ? true  : false } onBlur={(e) => setTotalMilk(totalMilk + Number(e.target.value))} type="text" placeholder='0' /></td>
                         </tr>)
                     }
                     </tbody>
